@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Upload</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+    <h1>Admin Panel</h1>
+    <nav>
+      <a href="adminupload.html">Bulk Upload</a>
+      <a href="adminproducts.html">Products</a>
+      <a href="#">Sign Out</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Upload Product Data</h2>
+    <form>
+      <input type="file" accept=".json,.csv,.txt">
+      <button type="submit">Upload</button>
+    </form>
+    <p>Accepted formats: JSON, CSV, TXT</p>
+    <pre>{ "id": 1, "name": "Item", "price": 10.00 }</pre>
+  </main>
+</body>
+</html>
