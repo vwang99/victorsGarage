@@ -11,7 +11,7 @@ const adminRoutes = require('./routes/adminRoutes');
 
 app.use(express.json());
 app.use(cors());
-app.use('/api', productRoutes);
+app.use("/api/Products", productRoutes);  // ✅ Ensure route is registered
 app.use('/api', cartRoutes);
 app.use('/api', adminRoutes);
 

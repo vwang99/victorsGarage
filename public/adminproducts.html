@@ -1,29 +1,25 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Products</title>
-  <link rel="stylesheet" href="admin.css">
-</head>
-<body>
-  <header>
-    <h1>Admin Panel</h1>
-    <nav>
-      <a href="adminupload.html">Bulk Upload</a>
-      <a href="adminproducts.html">Products</a>
-      <a href="#">Sign Out</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Product List</h2>
-    <input type="text" placeholder="Search by name or category">
-    <button>Add New Product</button>
-    <table>
-      <tr><th>ID</th><th>Name</th><th>Description</th><th>Category</th><th>Image</th><th>Price</th><th>Actions</th></tr>
+<section class="product-list">
+  <h2>Manage Products</h2>
+  <input type="text" placeholder="Search product..." id="search">
+  
+  <table>
       <tr>
-        <td>1</td><td>Item A</td><td>Good item</td><td>Category 1</td><td>images/itemA.jpg</td><td>$10.00</td>
-        <td><a href="admineditor.html">Edit</a> <button>Delete</button> <button>Archive</button></td>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Actions</th>
       </tr>
-    </table>
-  </main>
-</body>
-</html>
+      <tr>
+          <td>101</td>
+          <td>Classic Lamp</td>
+          <td>Home Decor</td>
+          <td>$20</td>
+          <td>
+              <button>Edit</button>
+              <button>Delete</button>
+              <button>Archive</button>
+          </td>
+      </tr>
+  </table>
+</section>

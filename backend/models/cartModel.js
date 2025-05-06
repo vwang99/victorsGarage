@@ -1,20 +1,40 @@
 const db = require('../database/db');
 
-let cart = [];
-
 function addToCart(productId) {
-    db.prepare("INSERT INTO cart (product_id) VALUES (?)").run(productId);
-    return db.prepare("SELECT * FROM cart").all();
+    console.log("Received productId:", productId);
+
+    const cartId = 1;
+    const existingItem = db.prepare("SELECT * FROM CartProducts WHERE cart_id = ? AND product_id = ?").get(cartId, productId);
+
+    if (existingItem) {
+        db.prepare("UPDATE CartProducts SET quantity = quantity + 1 WHERE id = ?").run(existingItem.id);
+    } else {
+        const productExists = db.prepare("SELECT id FROM Products WHERE id = ?").get(productId);
+        if (!productExists) {
+            throw new Error(`Product with ID ${productId} does not exist.`);
+        }
+
+        db.prepare("INSERT INTO CartProducts (cart_id, product_id, quantity) VALUES (?, ?, 1)").run(cartId, productId);
+    }
+
+    return db.prepare("SELECT * FROM CartProducts WHERE cart_id = ?").all(cartId);
+}
+
+function getCart() {
+    const cartId = 1; 
+    return db.prepare("SELECT * FROM CartProducts WHERE cart_id = ?").all(cartId);
 }
 
 function removeFromCart(productId) {
-    db.prepare("DELETE FROM cart WHERE product_id = ?").run(productId);
-    return db.prepare("SELECT * FROM cart").all();
+    const cartId = 1;
+    db.prepare("DELETE FROM CartProducts WHERE cart_id = ? AND product_id = ?").run(cartId, productId);
+    return db.prepare("SELECT * FROM CartProducts WHERE cart_id = ?").all(cartId);
 }
 
 function checkoutCart() {
-    db.prepare("DELETE FROM cart").run();
+    const cartId = 1;
+    db.prepare("DELETE FROM CartProducts WHERE cart_id = ?").run(cartId);
     return [];
 }
 
-module.exports = { addToCart, removeFromCart, checkoutCart };
+module.exports = { addToCart, getCart, removeFromCart, checkoutCart };

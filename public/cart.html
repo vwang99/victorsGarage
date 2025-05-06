@@ -1,60 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart & Admin Pages</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>My Shop</h1>
+  <script src="main.js"></script>
+  <header class="navbar">
+    <div class="logo">Victor's Garage</div>
     <nav>
       <a href="index.html">Home</a>
+      <a href="products.html">Catalogue</a>
+      <a href="about.html">About</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
     </nav>
   </header>
-  <main>
-    <h2>Shopping Cart</h2>
-    <div class="cart-item">
-      <img src="images/item1.jpg" alt="Item 1">
-      <div>
-        <p>Name: Item One</p>
-        <p>Price: $10.00</p>
-        <label>Quantity: <input type="number" value="2"></label>
-        <button>Remove</button>
-        <p>Total: $20.00</p>
-      </div>
-    </div>
-    <div class="cart-item">
-      <img src="images/item2.jpg" alt="Item 2">
-      <div>
-        <p>Name: Item Two</p>
-        <p>Price: $15.00</p>
-        <label>Quantity: <input type="number" value="1"></label>
-        <button>Remove</button>
-        <p>Total: $15.00</p>
-      </div>
-    </div>
-    <div class="cart-item">
-      <img src="images/item3.jpg" alt="Item 3">
-      <div>
-        <p>Name: Item Three</p>
-        <p>Price: $5.00</p>
-        <label>Quantity: <input type="number" value="1"></label>
-        <button>Remove</button>
-        <p>Total: $5.00</p>
-      </div>
-    </div>
-    <hr>
-    <div class="cart-summary">
-      <p>Subtotal: $40.00</p>
-      <p>Tax (6.75%): $2.70</p>
-      <p>Delivery Fee: $5.00</p>
-      <p>Service Fee: $0.00</p>
-      <p><strong>Total: $47.70</strong></p>
-      <button>Checkout</button>
-    </div>
-  </main>
+
+  <section class="cart">
+    <h1>Your Shopping Cart</h1>
+    <div id="cart-items" class="cart-items"></div>
+    <h2>Total: <span id="cart-total">$0</span></h2>
+    <button id="checkout-btn" class="cta-button">Checkout</button>
+  </section>
+
+  <footer>
+    <p>⚡ Engineered for Enthusiasts | © 2025 Victor's Garage</p>
+  </footer>
+
+  <script src="cart.js"></script>
 </body>
+
 </html>

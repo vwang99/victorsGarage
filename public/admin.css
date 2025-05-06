@@ -1,116 +1,27 @@
 body {
-    font-family: 'STIX Two Text', serif;
-    background-color: #F7F7EE;
-    color: #404040;
-    font-size: 20pt;
-    margin: 40px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
 }
 
-  header {
-    background-color: #444;
-    color: white;
-    padding: 1em;
-  }
-  nav a {
-    color: white;
-    margin-right: 1em;
-    text-decoration: none;
-  }
-  main {
-    background-color: #9e9e9e;
-    padding: 20px;
-  }
-  .cart-item {
-    display: flex;
-    gap: 1em;
-    margin-bottom: 1em;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 1em;
-  }
-  .cart-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
-  .cart-summary {
-    font-size: 1.2em;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  table, th, td {
-    border: 1px solid #ccc;
-    padding: 0.5em;
-    text-align: left;
-  }
-
-
-
-.cart-item {
-    display: flex;
-    gap: 1em;
-    margin-bottom: 1em;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 1em;
+nav {
+  display: flex;
+  gap: 20px;
 }
 
-.cart-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 5px dotted black;
-    border-radius: 5px;
-    padding: 10px;
+.upload, .product-list, .edit-product {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
 }
 
-.cart-summary {
-    font-size: 1.2em;
-    background-color: antiquewhite;
-    border: 12px double black;
-    padding: 10px;
+button {
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #ccc;
-    padding: 0.5em;
-    text-align: left;
-    background-color: antiquewhite;
-}
-
-.figure {
-    display: flex;
-    background-color: antiquewhite;
-    border: 10px inset black;
-    padding: 20px;
-    margin: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-.figure img {
-    background-color: #F7F7EE;
-    height: 300px;
-    border: 10px inset black;
-    padding: 20px;
-}
-
-.section {
-    background-color: antiquewhite;
-    border: 17px double black;
-    padding: 20px;
-    font-size: 20px;
-}
-
-.details {
-    background-color: #F7F7EE;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    text-align: center;
+button:hover {
+  background: #0056b3;
 }
